@@ -1,0 +1,31 @@
+{% extends 'leaveSystem/layout.html' %}
+
+{% block body %}
+
+
+{% for id, value in application.items %}
+<ul>
+    <li>{{value.name}}</li>
+    <li>{{value.rollno}}</li>
+    <li>{{value.phoneno}}</li>
+    <li>{{value.fatherName}}</li>
+    <li>{{value.branch}}</li>
+    <li>{{value.semester}}</li>
+    <li>{{value.hostelNumber}}</li>
+    <li>{{value.roomNumber}}</li>
+    <li>{{value.fromDate}}</li>
+    <li>{{value.time}}</li>
+    <li>{{value.toDate}}</li>
+    <li>{{value.reason}}</li>
+    <li>{{value.parentContact}}</li>
+</ul>
+    <h3 id="id_{{id}}"> </h3>
+    <img src="static/leaveSystem/Rocket.gif" alt="loading..." class="hide toggle-{{id}}" width="50" height="50">
+    <button data-id="{{id}}" class="approve disable-{{id}}">Approve</button>
+    <button data-id="{{id}}" class="reject disable-{{id}}">Reject</button>
+{% empty %}
+    <h1>No Applications</h1>
+
+{% endfor %}
+
+{% endblock %}

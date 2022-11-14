@@ -1,0 +1,14 @@
+{% extends "leaveSystem/layout.html" %}
+
+{% block body %}
+
+<h1>Leave Application</h1>
+
+
+<form action="{% url 'application' %}" method="post">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="Submit">
+</form>
+
+{% endblock %}

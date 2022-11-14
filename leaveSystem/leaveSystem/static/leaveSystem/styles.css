@@ -1,0 +1,67 @@
+.newLine{
+    display: block;
+}
+
+.hide{
+    display: none;
+}
+
+.box{
+    position: relative;
+    width: 380px;
+    height: 400px;
+    background: #1c1c1c;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.box::before{
+    content: '';
+    position: absolute;
+    top: -50%; 
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    transform-origin: bottom right;
+    background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+    animation: animate 6s linear infinite;
+}
+.box::after{
+    content: '';
+    position: absolute;
+    top: -50%; 
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    transform-origin: bottom right;
+    background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+.form{
+    padding: 40px;
+    position: absolute;
+    inset: 5px;
+    z-index: 10;
+    background: #28292d;
+}
+
+.form div{
+    margin: 10px 0px ;
+}
+
+.form div>label{
+    display: block;
+}
+
+#credentials{
+    margin: 34px 0px;
+}
+
+@keyframes animate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
