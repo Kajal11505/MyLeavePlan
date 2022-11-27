@@ -1,7 +1,10 @@
 body{
-    background: url('./bg.jpg');
+    height: 100vh;
+    background-image: url('./bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 .newLine{
@@ -14,41 +17,26 @@ body{
 
 .box{
     position: relative;
+    top: 40%;
+    transform: translateY(-50%);
     width: 380px;
     height: 400px;
-    background: #1c1c1c;
-    border-radius: 8px;
-    overflow: hidden;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
-.box::before{
-    content: '';
-    position: absolute;
-    top: -50%; 
-    left: -50%;
-    width: 380px;
-    height: 420px;
-    transform-origin: bottom right;
-    background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
-    animation: animate 6s linear infinite;
-}
-.box::after{
-    content: '';
-    position: absolute;
-    top: -50%; 
-    left: -50%;
-    width: 380px;
-    height: 420px;
-    transform-origin: bottom right;
-    background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
-    animation: animate 6s linear infinite;
-    animation-delay: -3s;
-}
+
 .form{
     padding: 40px;
     position: absolute;
     inset: 5px;
     z-index: 10;
-    background: #28292d;
+}
+
+.form h2{
+    font-size: 2rem;
 }
 
 .form div{
@@ -57,17 +45,21 @@ body{
 
 .form div>label{
     display: block;
+    letter-spacing: 1px;
+}
+
+.form div input{
+    background: none !important;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid rgb(53, 52, 52);
+    outline: none;
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 1.15rem;
 }
 
 #credentials{
     margin: 34px 0px;
-}
-
-@keyframes animate {
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
 }
