@@ -14,6 +14,7 @@ class applicationModel(models.Model):
     toDate=models.DateField()
     reason = models.CharField(max_length=500)
     parentContact=models.IntegerField()
+    status=models.CharField(max_length=255)
 
 class account_data(models.Model):
     username = models.CharField(max_length=30)
