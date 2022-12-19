@@ -1,3 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.newline{
+    display: block;
+    width: 200px;
+}
+
 body{
     height: 100vh;
     background-image: url('./bg.jpg');
@@ -7,8 +17,8 @@ body{
     background-position: center;
 }
 
-.newLine{
-    display: block;
+.highlight:hover{
+    text-shadow: 1px 1px 1px white;
 }
 
 .hide{
@@ -20,7 +30,7 @@ body{
     top: 40%;
     transform: translateY(-50%);
     width: 380px;
-    height: 400px;
+    height: 420px;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
     backdrop-filter: blur(8px);
     border-radius: 10px;
@@ -28,27 +38,27 @@ body{
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
-.form{
+.myform{
     padding: 40px;
     position: absolute;
     inset: 5px;
     z-index: 10;
 }
 
-.form h2{
+.myform h2{
     font-size: 2rem;
 }
 
-.form div{
+.myform form>div{
     margin: 10px 0px ;
 }
 
-.form div>label{
+.myform div>label{
     display: block;
     letter-spacing: 1px;
 }
 
-.form div input{
+.myform div input{
     background: none !important;
     display: block;
     width: 100%;
@@ -62,4 +72,52 @@ body{
 
 #credentials{
     margin: 34px 0px;
+}
+
+.application-form{
+    width: 90%;
+    height: 73vh;
+    position: relative;
+    /* border: 2px solid black; */
+    /* margin-left: 70px; */
+    /* backdrop-filter: blur(5px); */
+    background-color:rgba(245, 245, 245, 0.589);
+    padding: 40px;
+    padding-left: 60px;
+    border-radius: 10px;
+}
+
+.application-form input{
+    width: 55%;
+}
+
+textarea{
+    resize: none;
+}
+
+/* .mydiv{
+    border: 2px solid red;
+} */
+
+label{
+    display: block;
+}
+
+/* form{
+    border: 2px solid green;
+} */
+
+#submit{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100px;
+    /* background-color: white; */
+    border: none;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    /* float: right;
+    margin-right: 23px;
+    width: 100px; */
+    border-radius: 4px;
 }

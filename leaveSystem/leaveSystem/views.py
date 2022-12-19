@@ -37,7 +37,6 @@ def login_view(request):
             if bool(account_data.objects.filter(username=username)):
                 obj = account_data.objects.get(username=request.user.username)
                 if obj and int(obj.value) in applications:
-                    print("hi")
                     request.session["id"]=int(obj.value)
                 else:
                     deleteSessionOrAccountData(request,key="id")
@@ -100,7 +99,7 @@ def application_requests(request):
 @user_passes_test(lambda u: u.is_superuser)
 def respond_requests(request, id, is_approved):
     if id in applications:
-        print(applications[id])
+        # print(applications[id])
         applications[id]['status'] = is_approved
         email=applications[id]['email']
         name=applications[id]['name']
@@ -119,12 +118,14 @@ def respond_requests(request, id, is_approved):
         status="Approved" if applications[id]['status'] == 1 else "Rejected"
 
         # We can save approved or rejected requests here
+        f = applicationModel(name=name, rollno=rollno, phoneno=phoneno, fatherName=fatherName, branch=branch, semester=semester, hostelNumber=hostelNumber, roomNumber=roomNumber, fromDate=fromDate, time=time, toDate=toDate, reason=reason, parentContact=parentContact, status=status)
+        f.save()
         # Mail service can also be provided here
         message = f'Your leave application from {fromDate} to {toDate} has been {status}'
         send_mail(
             'Leave Application',
             message,
-            'ishanjoshiian@gmail.com',
+            'garimajalal156@gmail.com',
             [email],
             fail_silently=False,
         )
